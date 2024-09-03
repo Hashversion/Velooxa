@@ -1,7 +1,7 @@
 import Providers from "./providers";
+import "@/styles/globals.scss";
+import { getMetadata } from "@/utils/scaffold-eth/getMetadata";
 import "@rainbow-me/rainbowkit/styles.css";
-import "~~/styles/globals.scss";
-import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 export const metadata = getMetadata({
   title: "Velooxa — Your Premier Car Auction Platform",
