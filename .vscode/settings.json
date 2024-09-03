@@ -10,5 +10,6 @@
       "severity": "warn"
     }
   ],
+  "stylelint.validate": ["css", "postcss", "scss"],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
