@@ -1,8 +1,14 @@
+import localFont from "next/font/local";
 import Providers from "./providers";
 import Header from "@/components/layouts/header";
 import "@/styles/globals.scss";
 import { getMetadata } from "@/utils/scaffold-eth/getMetadata";
 import "@rainbow-me/rainbowkit/styles.css";
+
+const NeueMontreal = localFont({
+  src: "../public/fonts/NeueMontreal-Regular.otf",
+  display: "swap",
+});
 
 export const metadata = getMetadata({
   title: "Velooxa — Your Premier Car Auction Platform",
@@ -12,7 +18,7 @@ export const metadata = getMetadata({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning className={NeueMontreal.className}>
       <body>
         <Providers>
           <Header />
