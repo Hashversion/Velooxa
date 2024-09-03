@@ -14,6 +14,18 @@
   background: oklch(var(--b2));
 }
 
+:root {
+  --canvas: #{$clr-bw-900};
+  --canvas-text: #{$clr-bw-300};
+}
+
+[data-theme="light"] {
+  --canvas: #{$clr-bw-300};
+  --canvas-text: #{$clr-bw-900};
+  --primary-btn-clr: #{$clr-bw-300};
+  --primary-btn-bg: #{$clr-bw-900};
+}
+
 .btn {
   @apply shadow-md;
 }
