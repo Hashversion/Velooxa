@@ -5,8 +5,9 @@ import "~~/styles/globals.scss";
 import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 
 export const metadata = getMetadata({
-  title: "Scaffold-ETH 2 App",
-  description: "Built with 🏗 Scaffold-ETH 2",
+  title: "Velooxa — Your Premier Car Auction Platform",
+  description:
+    "Join Velooxa, the premier online car auction platform, where you can bid on a diverse range of vehicles. Discover great deals and detailed listings from the comfort of your home",
 });
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
