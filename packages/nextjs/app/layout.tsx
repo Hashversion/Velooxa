@@ -1,4 +1,5 @@
 import Providers from "./providers";
+import Header from "@/components/layouts/header";
 import "@/styles/globals.scss";
 import { getMetadata } from "@/utils/scaffold-eth/getMetadata";
 import "@rainbow-me/rainbowkit/styles.css";
@@ -14,6 +15,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html suppressHydrationWarning>
       <body>
         <Providers>
+          <Header />
           <main>{children}</main>
         </Providers>
       </body>

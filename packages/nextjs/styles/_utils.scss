@@ -1,0 +1,49 @@
+.padding {
+  &-global {
+    padding-inline: 2rem;
+  }
+
+  &-section-md {
+    padding-block: 2rem;
+  }
+
+  &-section-lg {
+    padding-block: 3rem;
+  }
+
+  &-section-xl {
+    padding-block: 6rem;
+  }
+}
+
+.container {
+  &-false {
+    display: none;
+  }
+
+  &-lg {
+    max-width: 110rem;
+    margin-inline: auto;
+  }
+
+  &-md {
+    max-width: 100rem;
+    margin-inline: auto;
+  }
+
+  & > * + * {
+    margin-bottom: 1rem;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+.hidden {
+  display: none !important;
+}

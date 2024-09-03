@@ -1,0 +1,29 @@
+html {
+  scrollbar-width: thin;
+}
+
+body {
+  color: var(--canvas-text);
+  background-color: var(--canvas);
+}
+
+img {
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+select {
+  background-color: white;
+}
