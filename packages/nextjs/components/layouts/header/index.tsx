@@ -21,7 +21,7 @@ const Header = () => {
               <ul>
                 <NavLink>Buy</NavLink>
                 <NavLink>Sell</NavLink>
-                <NavLink>Auctions</NavLink>
+                <NavLink href="/auctions">Auctions</NavLink>
               </ul>
             </div>
             <div>

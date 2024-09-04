@@ -1,9 +1,19 @@
 "use client";
 
-const NavLink = ({ children }: { children: React.ReactNode }) => {
+import { LinkProps as AProps, Link } from "react-aria-components";
+
+interface LinkProps extends AProps {
+  className?: string;
+  children: React.ReactNode;
+  href?: string;
+}
+
+const NavLink = ({ children, href }: LinkProps) => {
   return (
     <li>
-      <button className="cursor-pointer font-medium hover:underline">{children}</button>
+      <Link href={href} className="cursor-pointer font-medium hover:underline">
+        {children}
+      </Link>
     </li>
   );
 };
