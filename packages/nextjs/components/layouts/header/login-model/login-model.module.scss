@@ -1,0 +1,29 @@
+.wrapper {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0 0 0 / 1.4%);
+  backdrop-filter: blur(5px);
+
+  .model {
+    width: 380px;
+    height: 550px;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 36px 0 rgb(55 65 81 / 15%);
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding-block: 1rem;
+      padding-inline: 1.6rem;
+
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

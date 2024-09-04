@@ -5,8 +5,8 @@ import "@/styles/globals.scss";
 import { getMetadata } from "@/utils/scaffold-eth/getMetadata";
 import "@rainbow-me/rainbowkit/styles.css";
 
-const NeueMontreal = localFont({
-  src: "../public/fonts/NeueMontreal-Regular.otf",
+const Suisse = localFont({
+  src: "../public/fonts/Suisse_intl_Regular.ttf",
   display: "swap",
 });
 
@@ -18,7 +18,7 @@ export const metadata = getMetadata({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html suppressHydrationWarning className={NeueMontreal.className}>
+    <html suppressHydrationWarning className={Suisse.className}>
       <body>
         <Providers>
           <Header />
