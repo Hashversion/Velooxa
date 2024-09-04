@@ -2,20 +2,20 @@
 
 .button {
   padding-block: 0.6rem;
-  padding-inline: 1.1rem;
+  padding-inline: 1.3rem;
   font-size: 1rem;
   font-weight: 550;
   border-radius: 2em;
   transition: 180ms;
 
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-0.1rem);
-    opacity: 0.9;
-  }
-
   &--primary {
     color: var(--primary-btn-clr, #{$clr-bw-900});
     background-color: var(--primary-btn-bg, #{$clr-bw-300});
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-0.1rem);
+      opacity: 0.9;
+    }
   }
 }
