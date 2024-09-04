@@ -6,7 +6,7 @@ import SignInButton from "@/components/layouts/header/signin-button";
 
 const Header = () => {
   return (
-    <header>
+    <header className={s.header}>
       <Spacer>
         <div className={s.wrapper}>
           <nav className={s.nav}>
@@ -16,14 +16,7 @@ const Header = () => {
                 <h1>Velooxa</h1>
               </div>
             </Link>
-
             <ul>
-              <li>
-                <Link href="/posts">Blog</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
               <li>
                 <SignInButton />
               </li>

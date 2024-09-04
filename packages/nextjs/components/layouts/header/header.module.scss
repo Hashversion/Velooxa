@@ -1,13 +1,4 @@
 .wrapper {
-  &::after {
-    content: "";
-    display: block;
-    height: 1px;
-    margin-top: 1.5rem;
-    background-color: var(--canvas-text);
-    border-radius: 1em;
-  }
-
   .nav {
     display: flex;
     align-items: center;
