@@ -1,18 +1,18 @@
 .wrapper {
-  position: relative;
   display: flex;
 }
 
 .image__wrapper {
-  display: flex;
+  position: relative;
   flex-basis: 70%;
-  align-items: center;
   justify-content: center;
 
   .image {
     position: sticky;
-    top: 0;
-    padding: 6rem;
+    top: 26%;
+    display: flex;
+    justify-content: center;
+    margin-top: 14%;
   }
 }
 

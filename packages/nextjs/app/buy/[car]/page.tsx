@@ -45,6 +45,30 @@ const CarPage = () => {
                   <p>someother detail</p>
                   <p>Tesla</p>
                 </div>
+                <div className={s.detail}>
+                  <p>someother detail</p>
+                  <p>Tesla</p>
+                </div>
+                <div className={s.detail}>
+                  <p>someother detail</p>
+                  <p>Tesla</p>
+                </div>
+                <div className={s.detail}>
+                  <p>someother detail</p>
+                  <p>Tesla</p>
+                </div>
+                <div className={s.detail}>
+                  <p>someother detail</p>
+                  <p>Tesla</p>
+                </div>
+                <div className={s.detail}>
+                  <p>someother detail</p>
+                  <p>Tesla</p>
+                </div>
+                <div className={s.detail}>
+                  <p>someother detail</p>
+                  <p>Tesla</p>
+                </div>
               </div>
             </div>
           </div>
