@@ -1,0 +1,26 @@
+.hero {
+  display: flex;
+  min-height: 72vh;
+  background-color: hsl(240deg 6% 80%);
+
+  &__image {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    padding: 6rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+  }
+}
+
+.details__wrapper {
+  width: 100%;
+  padding-inline: 3rem;
+}
