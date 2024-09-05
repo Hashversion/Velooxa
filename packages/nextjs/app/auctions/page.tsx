@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import s from "./page.module.scss";
 import Spacer from "@/components/layouts/spacer";
 
@@ -9,6 +10,7 @@ const AuctionsPage = () => {
       availability: "available",
       make: "Tesla Cybertruck",
       owner: "Vaibhav",
+      auctionID: "1",
     },
 
     {
@@ -16,11 +18,13 @@ const AuctionsPage = () => {
       availability: "available",
       make: "Tesla Cybertruck",
       owner: "Vaibhav",
+      auctionID: "2",
     },
     {
       imageSrc: "/images/tesla.avif",
       availability: "available",
       make: "Tesla Cybertruck",
+      auctionID: "3",
       owner: "Vaibhav",
     },
   ];
@@ -33,7 +37,7 @@ const AuctionsPage = () => {
           </div>
           <div className={s.auction}>
             {details.map(detail => (
-              <div key={crypto.randomUUID()} className={s.card}>
+              <Link key={crypto.randomUUID()} href={`/buy/${detail.auctionID}`} className={s.card}>
                 <div className={s.card__image}>
                   <Image src={detail.imageSrc} width={600} height={600} alt="Car Image" />
                 </div>
@@ -47,7 +51,7 @@ const AuctionsPage = () => {
                     <div className=" self-end">3 ETH</div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </Spacer>
