@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     <>
       <section className="min-h-screen">
         <Spacer section="sm">
-          <h1 className=" font-semibold text-5xl py-5 inline-block ">Trending Auction</h1>
+          <h1 className={s.trending__heading}>Trending Auction</h1>
           <div className={s.hero}>
             <div className={s.hero__image}>
               <div>
