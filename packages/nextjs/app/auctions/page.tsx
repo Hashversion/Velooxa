@@ -13,7 +13,7 @@ const AuctionsPage = () => {
           <div className={s.auction}>
             <div className={s.card}>
               <div className={s.card__image}>
-                <Image src={"/images/cybertruck.jpg"} width={600} height={600} alt="Car Image" />
+                <Image src={"/images/tesla-v1.avif"} width={600} height={600} alt="Car Image" />
               </div>
               <div className={s.card__details}>
                 <div className={s.card__available}>Available</div>
@@ -28,7 +28,7 @@ const AuctionsPage = () => {
             </div>
             <div className={s.card}>
               <div className={s.card__image}>
-                <Image src={"/images/cybertruck.jpg"} width={600} height={600} alt="Car Image" />
+                <Image src={"/images/tesla-v1.avif"} width={600} height={600} alt="Car Image" />
               </div>
               <div className={s.card__details}>
                 <div className={s.card__available}>Available</div>
