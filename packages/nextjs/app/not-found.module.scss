@@ -1,0 +1,30 @@
+@keyframes darken {
+  0% {
+    font-size: 120px;
+    color: #566573;
+  }
+
+  50% {
+    font-size: 220px;
+    color: #273746;
+  }
+
+  100% {
+    font-size: 270px;
+    color: #17202a;
+  }
+}
+
+.four {
+  margin: 0 auto;
+  text-align: center;
+  animation-name: darken;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.para {
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+}
