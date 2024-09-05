@@ -1,20 +1,13 @@
 .heading {
+  margin-bottom: 2rem;
   font-size: 4rem;
   font-weight: bold;
-
-  &::after {
-    content: "";
-    display: block;
-    height: 1px;
-    margin-bottom: 2rem;
-    background-color: hsl(240deg 6% 80%);
-  }
 }
 
 .auction {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
 
   .card {
     grid-column: span 2;
