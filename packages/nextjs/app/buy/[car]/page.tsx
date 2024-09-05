@@ -3,7 +3,9 @@ import s from "./page.module.scss";
 import Spacer from "@/components/layouts/spacer";
 import Button from "@/components/ui/button";
 
-const CarPage = () => {
+const CarPage = ({ params }: { params: { car: string } }) => {
+  const { car } = params;
+  console.log(car);
   return (
     <section className=" min-h-screen">
       <Spacer>
