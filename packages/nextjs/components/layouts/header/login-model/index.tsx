@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
+import LabelInput from "./label-input";
 import s from "./login-model.module.scss";
 import CrossIcon from "@/components/assets/CrossIcon";
+import Button from "@/components/ui/button";
 
 type LoginModelT = {
   isVisible: boolean;
@@ -26,11 +28,22 @@ const LoginModel = ({ isVisible, onClose }: LoginModelT) => {
       <div className={s.wrapper}>
         <div className={s.model}>
           <div className={s.header}>
-            <p>Signup</p>
+            <div></div>
             <button className=" cursor-pointer" onClick={() => onClose()}>
               <CrossIcon />
             </button>
           </div>
+          <div className={s.brand}>
+            <h1>Signup</h1>
+            <p>Connect to Velooxa</p>
+          </div>
+
+          <form action="" className={s.form}>
+            <LabelInput type="text" placeholder="Name" />
+            <LabelInput type="email" placeholder="Email" />
+            <LabelInput type="password" placeholder="Password" />
+            <Button className={s.button}>Submit</Button>
+          </form>
         </div>
       </div>
     </>

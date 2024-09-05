@@ -10,20 +10,45 @@
 
   .model {
     width: 380px;
-    height: 550px;
+    height: 500px;
     background-color: white;
     border-radius: 0.5rem;
     box-shadow: 0 8px 36px 0 rgb(55 65 81 / 15%);
+  }
+}
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      padding-block: 1rem;
-      padding-inline: 1.6rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.3rem;
+  padding-inline: 1.6rem;
+}
 
-      p {
-        font-size: 1.3rem;
-      }
-    }
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2.8rem;
+
+  label {
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 0.5em;
+  }
+
+  .button {
+    display: inline-block;
+    flex: 0 0 50%;
+    margin-top: 0.4rem;
+    text-align: center;
   }
 }
