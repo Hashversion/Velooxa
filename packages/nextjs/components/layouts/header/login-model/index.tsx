@@ -42,7 +42,9 @@ const LoginModel = ({ isVisible, onClose }: LoginModelT) => {
             <LabelInput type="text" placeholder="Name" />
             <LabelInput type="email" placeholder="Email" />
             <LabelInput type="password" placeholder="Password" />
-            <Button className={s.button}>Submit</Button>
+            <Button variant="secondary" className={s.button}>
+              Submit
+            </Button>
           </form>
         </div>
       </div>

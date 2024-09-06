@@ -29,8 +29,8 @@ const Home: NextPage = () => {
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aperiam sunt quo.</p>
                 </div>
                 <div className="flex gap-3 py-6">
-                  <Button>Place Bid</Button>
-                  <Button>Buy Now</Button>
+                  <Button variant="secondary">Place Bid</Button>
+                  <Button variant="secondary">Buy Now</Button>
                 </div>
               </div>
             </div>
