@@ -11,6 +11,7 @@
   .model {
     width: 380px;
     height: 500px;
+    color: black;
     background-color: white;
     border-radius: 0.5rem;
     box-shadow: 0 8px 36px 0 rgb(55 65 81 / 15%);
@@ -43,6 +44,10 @@
     padding-inline: 1rem;
     background-color: #f0f0f0;
     border-radius: 0.5em;
+
+    input {
+      width: 100%;
+    }
   }
 
   .button {

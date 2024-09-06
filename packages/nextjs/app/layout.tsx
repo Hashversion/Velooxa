@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import Providers from "./providers";
+import Footer from "@/components/layouts/footer";
 import Header from "@/components/layouts/header";
 import "@/styles/globals.scss";
 import { getMetadata } from "@/utils/scaffold-eth/getMetadata";
@@ -23,6 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Providers>
           <Header />
           <main>{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>

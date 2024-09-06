@@ -17,6 +17,9 @@
 :root {
   --canvas: #{$clr-bw-900};
   --canvas-text: #{$clr-bw-300};
+  --hero-bg: hsl(240deg 6% 78%);
+  --hero-clr: #{$clr-bw-900};
+  --card-bg: #141d2b;
 }
 
 [data-theme="light"] {
@@ -24,6 +27,9 @@
   --canvas-text: #{$clr-bw-900};
   --primary-btn-clr: #{$clr-bw-300};
   --primary-btn-bg: #{$clr-bw-900};
+  --hero-bg: hsl(240deg 6% 78%);
+  --hero-clr: #{$clr-bw-900};
+  --card-bg: #141d2b;
 }
 
 .btn {
