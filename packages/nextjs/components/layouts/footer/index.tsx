@@ -1,12 +1,13 @@
+import { SwitchTheme } from "@/components/SwitchTheme";
 import Spacer from "@/components/layouts/spacer";
-import { ThemeButton } from "@/components/ui/theme-button/";
 
 const Footer = () => {
   return (
     <footer>
       <Spacer>
-        <ThemeButton />
-        <p>Footer</p>
+        <div className=" fixed right-[3vw] bottom-[3vh]">
+          <SwitchTheme />
+        </div>
       </Spacer>
     </footer>
   );
