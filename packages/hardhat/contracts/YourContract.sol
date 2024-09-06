@@ -1,87 +1,102 @@
 //SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0 <0.9.0;
 
-// Useful for debugging. Remove when deploying to a live network.
-import "hardhat/console.sol";
+contract YourContract {   
+    // Struct to store car details
+    struct Car {
+        string description;
+        uint basePrice; // in wei (ETH)
+        address owner;
+    }
+    
+    // Struct to store user details
+    struct User {
+        string name;
+        string email;
+    }
+    
+    // Struct for auction details
+    struct Auction {
+        string description;
+        uint basePrice;
+        uint endTime;
+        address highestBidder;
+        uint highestBid;
+        bool ended;
+    }
+    
+    // Struct for bids
+    struct Bid {
+        address bidder;
+        uint amount;
+    }
 
-// Use openzeppelin to inherit battle-tested implementations (ERC20, ERC721, etc)
-// import "@openzeppelin/contracts/access/Ownable.sol";
+    // Mappings to store data
+    mapping(address => User) public users;
+    mapping(address => Car) public carsForSale;
+    mapping(address => Auction) public auctions;
+    mapping(address => Bid[]) public auctionBids; // list of bids for each auction
 
-/**
- * A smart contract that allows changing a state variable of the contract and tracking the changes
- * It also allows the owner to withdraw the Ether in the contract
- * @author BuidlGuidl
- */
-contract YourContract {
-	// State Variables
-	address public immutable owner;
-	string public greeting = "Building Unstoppable Apps!!!";
-	bool public premium = false;
-	uint256 public totalCounter = 0;
-	mapping(address => uint) public userGreetingCounter;
+    // Register user
+    function registerUser(string memory _name, string memory _email) public {
+        users[msg.sender] = User(_name, _email);
+    }
 
-	// Events: a way to emit log statements from smart contract that can be listened to by external parties
-	event GreetingChange(
-		address indexed greetingSetter,
-		string newGreeting,
-		bool premium,
-		uint256 value
-	);
+    // Add a car for sale
+    function sellCar(string memory _description, uint _basePrice) public {
+        carsForSale[msg.sender] = Car(_description, _basePrice, msg.sender);
+    }
 
-	// Constructor: Called once on contract deployment
-	// Check packages/hardhat/deploy/00_deploy_your_contract.ts
-	constructor(address _owner) {
-		owner = _owner;
-	}
+    // Buy a car
+    function buyCar(address _seller) public payable {
+        require(msg.value >= carsForSale[_seller].basePrice, "Insufficient funds");
+        User memory buyer = users[msg.sender];
+        // Logic to transfer car ownership or trigger other processes
+    }
 
-	// Modifier: used to define a set of rules that must be met before or after a function is executed
-	// Check the withdraw() function
-	modifier isOwner() {
-		// msg.sender: predefined variable that represents address of the account that called the current function
-		require(msg.sender == owner, "Not the Owner");
-		_;
-	}
+    // Start an auction
+    function startAuction(string memory _description, uint _basePrice, uint _duration) public {
+        auctions[msg.sender] = Auction(
+            _description, 
+            _basePrice, 
+            block.timestamp + _duration, 
+            address(0), 
+            0, 
+            false
+        );
+    }
 
-	/**
-	 * Function that allows anyone to change the state variable "greeting" of the contract and increase the counters
-	 *
-	 * @param _newGreeting (string memory) - new greeting to save on the contract
-	 */
-	function setGreeting(string memory _newGreeting) public payable {
-		// Print data to the hardhat chain console. Remove when deploying to a live network.
-		console.log(
-			"Setting new greeting '%s' from %s",
-			_newGreeting,
-			msg.sender
-		);
+    // Place a bid on an auction
+    function placeBid(address _auctioneer) public payable {
+        Auction storage auction = auctions[_auctioneer];
+        require(block.timestamp < auction.endTime, "Auction has ended");
+        require(msg.value > auction.highestBid, "Bid is not higher than current highest");
 
-		// Change state variables
-		greeting = _newGreeting;
-		totalCounter += 1;
-		userGreetingCounter[msg.sender] += 1;
+        auctionBids[_auctioneer].push(Bid(msg.sender, msg.value));
 
-		// msg.value: built-in global variable that represents the amount of ether sent with the transaction
-		if (msg.value > 0) {
-			premium = true;
-		} else {
-			premium = false;
-		}
+        auction.highestBid = msg.value;
+        auction.highestBidder = msg.sender;
+    }
 
-		// emit: keyword used to trigger an event
-		emit GreetingChange(msg.sender, _newGreeting, msg.value > 0, msg.value);
-	}
+    // End an auction and declare the winner
+    function endAuction(address _auctioneer) public {
+        Auction storage auction = auctions[_auctioneer];
+        require(block.timestamp >= auction.endTime, "Auction not yet ended");
+        require(!auction.ended, "Auction already ended");
 
-	/**
-	 * Function that allows the owner to withdraw all the Ether in the contract
-	 * The function can only be called by the owner of the contract as defined by the isOwner modifier
-	 */
-	function withdraw() public isOwner {
-		(bool success, ) = owner.call{ value: address(this).balance }("");
-		require(success, "Failed to send Ether");
-	}
+        auction.ended = true;
+        // Transfer car ownership and funds logic
+    }
 
-	/**
-	 * Function that allows the contract to receive ETH
-	 */
-	receive() external payable {}
+    // Get auction bids (returns all bids with their names)
+    function getAuctionBids(address _auctioneer) public view returns (Bid[] memory) {
+        return auctionBids[_auctioneer];
+    }
+
+    // Get maximum bid and bidder's name for a specific auction
+    function getHighestBidderInfo(address _auctioneer) public view returns (address, uint, string memory) {
+        Auction memory auction = auctions[_auctioneer];
+        string memory bidderName = users[auction.highestBidder].name;
+        return (auction.highestBidder, auction.highestBid, bidderName);
+    }
 }
