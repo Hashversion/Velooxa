@@ -41,5 +41,11 @@
   "packageManager": "yarn@3.2.3",
   "engines": {
     "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.1.5",
+    "@tanstack/react-query": "^5.55.0",
+    "viem": "^2.21.3",
+    "wagmi": "^2.12.8"
   }
 }
